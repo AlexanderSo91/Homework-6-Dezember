@@ -14,12 +14,11 @@ public class Main {
 
         System.out.println("\nЗадача_1");
 
-        int clientOS = 5;
+        int clientOS = 20;
         if (clientOS == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке");
 
-        } else if (clientOS == 1) {
-
+        } else if (clientOS==1){
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Выберите вашу версию приложения");
@@ -35,36 +34,34 @@ public class Main {
         int clientDeviceYear = 2010;
 
         if (clientOS == 0) {
-            System.out.println("Установите версию приложения для iOS по ссылке");
-        }
-
-        else if (clientDeviceYear < 2015) {
+            if (clientDeviceYear < 2015) {
                 System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-
-            } else if  (clientOS == 1) {
-
-                System.out.println("Установите версию приложения для Android по ссылке");
-
-            } else if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-
             } else {
-                System.out.println("Выберите вашу версию приложения и год");
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
+        } else {
+            if (clientOS == 1) {
+                if (clientDeviceYear < 2015) {
+                    System.out.println("Установите облегченную версию приложения для Android по ссылке");
+                } else {
+                    System.out.println("Установите версию приложения для Android по ссылке");
+                }
             }
         }
+    }
+
 
 
     public static void task3() {
 
         System.out.println("\nЗадача_3");
 
-        int year=3000;
-        boolean year1=year % 4==0 || year % 400==0 || year % 100 !=0;
+        int year=2020;
 
-        if (year1) {
-            System.out.println(year+ " Год является высокосным");
+        if (year % 4 ==0 && year % 100!= 0 || year % 400==0) {
+            System.out.println(year+ " год является высокосным");
         } else  {
-            System.out.println(year+ " Год не является высокосным");
+            System.out.println(year+ " год не является высокосным");
         }
 
     }
